@@ -1,0 +1,54 @@
+/* CSS for Navbar */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #ffffff;
+}
+
+.navbar {
+    background: #212121;
+    margin: 0;
+    padding: 20px 30px;
+}
+
+.navbar-brand {
+    font-size: 14pt;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+}
+
+.container-fluid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-toggler {
+    display: none;
+    color: white;
+    font-size: 14pt;
+}
+
+.navbar-toggler:hover {
+    cursor: pointer;
+}
+
+.navbar-nav {
+    margin: 0;
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+.nav-item {
+    padding-left: 0;
+    margin-right: 10px;
+}
+
+.nav-link {
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+}

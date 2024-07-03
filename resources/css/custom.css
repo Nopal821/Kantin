@@ -1,0 +1,55 @@
+/* resources/css/custom.css */
+
+/* Navbar */
+.navbar {
+    background-color: #343a40; /* Warna latar belakang navbar */
+  }
+  
+  .navbar-brand {
+    color: #ffffff; /* Warna teks brand */
+    font-size: 1.5rem; /* Ukuran teks brand */
+  }
+  
+  .navbar-brand:hover {
+    color: #ffffff; /* Warna teks brand saat dihover */
+  }
+  
+  .navbar-nav .nav-link {
+    color: #ffffff; /* Warna teks link */
+    font-size: 1rem; /* Ukuran teks link */
+    margin-right: 10px; /* Jarak antar link */
+  }
+  
+  .navbar-nav .nav-link:hover {
+    color: #ffffff; /* Warna teks link saat dihover */
+  }
+  
+  .navbar-toggler {
+    border-color: #ffffff; /* Warna garis toggler */
+  }
+  
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba%28255%2c255%2c255%2c.5%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    /* Ubah warna ikon toggler */
+  }
+  
+  .navbar-toggler:focus {
+    outline: none; /* Hilangkan focus border saat toggler di-klik */
+  }
+  
+  /* Form pencarian */
+  .form-control {
+    border-color: #ffffff; /* Warna border input form */
+  }
+  
+  .btn-outline-success {
+    color: #28a745; /* Warna teks tombol pencarian */
+    border-color: #28a745; /* Warna border tombol pencarian */
+  }
+  
+  .btn-outline-success:hover {
+    background-color: #28a745; /* Warna latar belakang tombol saat dihover */
+    border-color: #28a745; /* Warna border tombol saat dihover */
+    color: #ffffff; /* Warna teks tombol saat dihover */
+  }
+  
