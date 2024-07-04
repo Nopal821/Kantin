@@ -11,6 +11,8 @@ class OrdersController extends Controller
     {
         $orders = Pesanan::latest()->paginate(10); // Example: Get orders, latest first, paginated
 
+        $orders = pesanan::orderBy('created_at', 'asc')->get();
+
         return view('orders.index', compact('orders'));
     }
 
@@ -25,19 +27,27 @@ class OrdersController extends Controller
     }
 
     // Process method to process the order
-    public function process(Request $request, $orderId)
-    {
-        $order = Pesanan::findOrFail($orderId);
+   // Process method to process the order
+public function process(Request $request, $orderId)
+{
+    $order = Pesanan::findOrFail($orderId);
 
-        // Update order with additional details
-        $order->student_name = $request->input('student_name');
-        $order->amount_given = $request->input('amount_given');
-        $order->change = $order->amount_given - $order->total;
-        $order->status = 'processed';
-        $order->save();
+    // Update order with additional details
+    $order->student_name = $request->input('student_name');
+    $order->amount_given = $request->input('amount_given');
+    $order->change = $order->amount_given - $order->total;
 
-        return redirect()->route('orders.receipt', $order->id)->with('success', 'Order processed successfully.');
+    // Check if amount given is less than total
+    if ($order->amount_given < $order->total) {
+        return redirect()->back()->withInput()->withErrors(['amount_given' => 'Uang yang diberikan kurang dari total pesanan.']);
     }
+
+    $order->status = 'processed';
+    $order->save();
+
+    return redirect()->route('orders.receipt', $order->id)->with('success', 'Order processed successfully.');
+}
+
 
     // Receipt method to generate a receipt for the order
     public function receipt(Pesanan $order)

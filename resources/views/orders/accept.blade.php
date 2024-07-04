@@ -25,6 +25,9 @@
     <input type="text" id="student_name" name="student_name" required>
     <label for="amount_given">Uang yang Diberikan:</label>
     <input type="number" id="amount_given" name="amount_given" min="0" required>
+    @error('amount_given')
+        <div class="alert alert-danger">{{ $message }}</div>
+    @enderror
     <button type="submit">Proses</button>
 </form>
 

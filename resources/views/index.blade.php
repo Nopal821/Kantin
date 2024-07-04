@@ -113,6 +113,8 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        position: relative; /* Tambahkan posisi relatif */
+        z-index: 1; /* Atur z-index agar lebih tinggi dari notifikasi */
     }
 
     .product-image {
@@ -147,7 +149,7 @@
     .modal {
         display: none;
         position: fixed;
-        z-index: 1;
+        z-index: 2; /* Atur z-index lebih tinggi dari card */
         left: 0;
         top: 0;
         width: 100%;
@@ -200,7 +202,7 @@
         transform: translate(-50%, -50%);
         border-radius: 5px;
         box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-        z-index: 1000;
+        z-index: 3; /* Atur z-index lebih tinggi dari card dan modal */
         text-align: center;
         font-size: 14px;
         width: auto;
